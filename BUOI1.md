@@ -1,6 +1,5 @@
 # QUẢN LÝ KHÁCH SẠN
 
-## Buổi 1:
 ### Mô tả bài toán
 Một khách sạn yêu cầu viết một phần mềm quản lý khách sạn. Chương trình cho phép quản lý khách thuê phòng, quản lý phòng, trang thiết bị trong phòng và nhân viên.  
 Chương trình cung cấp cho người dùng một tài khoản đăng nhập và đăng xuất để sử dụng hệ thống quản lý này. Với một tài khoản đăng nhập hệ thống sẽ xác định người đăng nhập là nhân viên hay quản lý để cung cấp quyền hạn tương ứng cho từng tài khoản đăng nhập.  
