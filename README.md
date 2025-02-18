@@ -59,6 +59,8 @@ Hệ thống quản lý khách sạn giúp tự động hóa các quy trình nh�
    - Admin có thể xem các báo cáo: Doanh thu theo ngày/tháng/năm. Số lượng phòng đã đặt. Hiệu suất nhân viên.
 
 ---
+##### Biểu đồ phân rã chức năng
+![image](https://github.com/user-attachments/assets/dbaa9223-cf4d-4bc8-876d-f709d2d559e6)
 
 #### Đặc tả thiết kế cơ sở dữ liệu:
 
@@ -82,6 +84,8 @@ Các quy tắc kinh doanh: ví dụ, khách không được đặt phòng đã c
    - Xác định kiểu dữ liệu phù hợp cho từng cột.  
    - Định nghĩa các ràng buộc dữ liệu (NOT NULL, UNIQUE, CHECK, DEFAULT, v.v.).  
    - Áp dụng chuẩn hóa (Normalization) để tránh trùng lặp dữ liệu.  
+##### Sơ đồ ERD
+![image](https://github.com/user-attachments/assets/481df595-e5b5-4821-9b46-4cb466686ccb)
 
 4. **Ràng buộc toàn vẹn dữ liệu**  
    - Toàn vẹn miền giá trị (Domain Integrity): Kiểu dữ liệu hợp lý (ví dụ, giá phòng phải > 0, số điện thoại phải có định dạng hợp lệ).  
@@ -128,3 +132,60 @@ Sau khi có thông tin khách hàng, tiến hành đặt phòng cho khách.
 
 7. **Kết thúc quy trình**  
 Quy trình đặt phòng hoàn tất.
+
+#### Quy trình trả phòng (check-out):
+
+1. **Khách hàng đến quầy lễ tân**:
+   - Khách hàng thông báo với lễ tân về việc trả phòng.
+   - Lễ tân yêu cầu khách hàng cung cấp thông tin đặt phòng hoặc thẻ phòng để tìm kiếm thông tin khách.
+
+2. **Kiểm tra tình trạng phòng**:
+   - Lễ tân kiểm tra tình trạng phòng (sạch sẽ, không bị hư hỏng).
+   - Nếu phòng có vấn đề (thiết bị hư hỏng, thiệt hại tài sản), lễ tân ghi nhận và yêu cầu khách hàng bồi thường.
+
+3. **Tính toán hóa đơn**:
+   - Lễ tân tính toán tổng chi phí cho khách, bao gồm tiền phòng, dịch vụ sử dụng (spa, ăn uống, v.v.), và các khoản phụ thu (nếu có).
+   - Hóa đơn có thể được xuất dưới dạng giấy hoặc qua email cho khách hàng.
+
+4. **Thanh toán**:
+   - Khách hàng lựa chọn phương thức thanh toán (thẻ tín dụng, tiền mặt, hoặc các phương thức thanh toán online).
+   - Lễ tân xác nhận thanh toán và in hóa đơn (hoặc gửi qua email).
+
+5. **Cập nhật trạng thái phòng**:
+   - Lễ tân cập nhật lại tình trạng phòng trong hệ thống, chuyển sang "Phòng trống" hoặc "Đang dọn dẹp".
+
+6. **Thu hồi chìa khóa và thẻ phòng**:
+   - Lễ tân thu hồi chìa khóa và thẻ phòng từ khách hàng.
+
+7. **Hoàn tất thủ tục check-out**:
+   - Lễ tân cảm ơn khách hàng và tiễn khách ra ngoài.
+
+#### Quy trình quản lý phòng:
+
+1. **Tạo phòng**:
+   - Quản lý có thể thêm thông tin phòng mới vào hệ thống, bao gồm số phòng, loại phòng, giá phòng, và tình trạng phòng.
+   - Phòng được phân loại (phòng tiêu chuẩn, phòng sang trọng, phòng gia đình, v.v.).
+
+2. **Cập nhật thông tin phòng**:
+   - Quản lý có thể thay đổi thông tin phòng như giá phòng, loại phòng, và tình trạng phòng.
+   - Khi phòng được sửa chữa hoặc nâng cấp, trạng thái phòng phải được cập nhật.
+
+3. **Quản lý tình trạng phòng**:
+   - Các tình trạng phòng gồm: Trống, Đã đặt, Đang sử dụng, Đang dọn dẹp.
+   - Lễ tân hoặc nhân viên cần cập nhật tình trạng phòng thường xuyên để hệ thống luôn chính xác.
+
+4. **Xóa phòng**:
+   - Quản lý có thể xóa phòng khỏi hệ thống nếu phòng không còn sử dụng hoặc có vấn đề nghiêm trọng (sửa chữa lớn).
+
+#### Quy trình dịch vụ khách sạn:
+
+1. **Khách yêu cầu dịch vụ**:
+   - Khách hàng có thể yêu cầu các dịch vụ bổ sung như ăn uống, giặt ủi, spa, massage, v.v.
+   - Nhân viên phục vụ sẽ tiếp nhận yêu cầu của khách và tiến hành cung cấp dịch vụ.
+
+2. **Cập nhật dịch vụ**:
+   - Sau khi dịch vụ được hoàn thành, nhân viên cập nhật trạng thái dịch vụ trong hệ thống.
+   - Mỗi dịch vụ sẽ được tính phí và cộng vào hóa đơn của khách hàng khi trả phòng.
+
+3. **Báo cáo dịch vụ**:
+   - Quản lý có thể xem báo cáo chi tiết về các dịch vụ đã sử 
