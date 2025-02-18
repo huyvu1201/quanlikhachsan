@@ -27,11 +27,24 @@ Hệ thống còn hỗ trợ chức năng báo cáo để nhân viên có thể 
 1.1 Mô tả tổng quan  
 Hệ thống quản lý khách sạn giúp tự động hóa các quy trình như đặt phòng, thanh toán, quản lý khách hàng, nhân viên, dịch vụ khách sạn, báo cáo doanh thu, v.v.  
 1.2 Đối tượng sử dụng  
-- Quản lý khách sạn (Admin)  
-- Lễ tân  
-- Khách hàng  
-- Nhân viên khách sạn (dọn phòng, phục vụ)  
-- Bộ phận kế toán  
+Đối tượng sử dụng Quản lý khách sạn (Admin) ,Khách hàng ,Nhân viên lễ tân (dọn phòng, phục vụ) 	`
+1. **Admin (Người quản lý)**
+   - Quản lý có thể đăng nhập website của họ.
+   - Quản lý có thể xem, thay đổi trạng thái phòng, thêm, sửa, xoá, tìmkiếm các phòng.
+   - Quản lý có thể xem, thêm, sửa, xoá, tìm kiếm các dịch vụ.
+   - Quản lý có thể xem, thêm, sửa, xoá, tìm kiếm các thông tin củakhách hàng.
+   - Quản lý có thể xem, thêm, sửa, xoá, tìm kiếm các thông tin củanhân viên.
+   - Quản lý có thể phân quyền cho các thành viên sử dụng hệ thống.
+   - Quản lý có thể thanh toán hóa đơn.
+2.**Nhân viên**
+   - Đặt phòng cho khách.
+   - Thanh toán và thay đổi trạng thái của phòng.
+   - Gọi các dịch vụ mà khách hàng yêu cầu. 
+   - Quản lý, sắp xếp, liên hệ với khách hàng đã đặt phòng trên website.
+3. **Khách hàng**
+   - Khách hàng có thể tìm kiếm thông tin theo tên, giá cả ...
+   - Khách hàng có thể xem tất cả các phòng có mặt ở website.
+   - Khách hàng có thể đặt phòng trước ở website. 
 
 #### 2. Yêu cầu nghiệp vụ 
 ##### 2.1 Chức năng hệ thống 
