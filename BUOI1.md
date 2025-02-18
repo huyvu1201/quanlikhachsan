@@ -36,7 +36,7 @@ Hệ thống quản lý khách sạn giúp tự động hóa các quy trình nh�
    - Quản lý có thể xem, thêm, sửa, xoá, tìm kiếm các thông tin củanhân viên.
    - Quản lý có thể phân quyền cho các thành viên sử dụng hệ thống.
    - Quản lý có thể thanh toán hóa đơn.
-2.**Nhân viên**
+2. **Nhân viên**
    - Đặt phòng cho khách.
    - Thanh toán và thay đổi trạng thái của phòng.
    - Gọi các dịch vụ mà khách hàng yêu cầu. 
@@ -80,18 +80,14 @@ Hệ thống quản lý khách sạn giúp tự động hóa các quy trình nh�
 #### Đặc tả thiết kế cơ sở dữ liệu:
 
 1. **Xác định yêu cầu hệ thống**  
-Khách sạn cần quản lý những gì? (phòng, khách hàng, đặt phòng, nhân viên, dịch vụ, hóa đơn, v.v.)  
-Luồng nghiệp vụ chính: đặt phòng, hủy phòng, check-in, check-out, thanh toán, sử dụng dịch vụ.  
-Các quy tắc kinh doanh: ví dụ, khách không được đặt phòng đã có người ở, hóa đơn phải được thanh toán trước khi check-out, v.v.  
+   - Khách sạn cần quản lý những gì? (phòng, khách hàng, đặt phòng, nhân viên, dịch vụ, hóa đơn, v.v.)  
+   - Luồng nghiệp vụ chính: đặt phòng, hủy phòng, check-in, check-out, thanh toán, sử dụng dịch vụ.  
+   - Các quy tắc kinh doanh: ví dụ, khách không được đặt phòng đã có người ở, hóa đơn phải được thanh toán trước khi check-out, v.v.  
 
 2. **Xây dựng mô hình thực thể - quan hệ (ERD)**  
    - Xác định các thực thể chính (entities): Khách hàng, Phòng, Đặt phòng, Nhân viên, Dịch vụ, Hóa đơn, v.v.  
    - Xác định thuộc tính (attributes) của từng thực thể.  
-   - Xác định mối quan hệ (relationships) giữa các thực thể:  
-      - Một khách có thể đặt nhiều phòng.  
-      - Một phòng có thể có nhiều đặt phòng (vào các thời điểm khác nhau).  
-      - Một hóa đơn thuộc về một lần đặt phòng.  
-      - Một khách có thể sử dụng nhiều dịch vụ.  
+   - Xác định mối quan hệ (relationships) giữa các thực thể
 
 3. **Thiết kế bảng dữ liệu (Schema Design)**  
    - Chuyển mô hình ERD thành các bảng trong MySQL.  
