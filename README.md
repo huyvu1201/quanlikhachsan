@@ -76,30 +76,30 @@ Chỉ mục (INDEX): Đánh chỉ mục trên các cột thường được tìm
 Partitioning: Nếu dữ liệu lớn, có thể phân vùng hóa đơn theo thời gian (theo tháng, năm).
 Caching: Nếu cần hiệu suất cao, có thể dùng Redis để cache dữ liệu phòng trống.
 6. Kiểm thử và triển khai
-Tạo dữ liệu mẫu để kiểm tra truy vấn (INSERT dữ liệu giả lập).
-Chạy các truy vấn thử nghiệm để đảm bảo dữ liệu chính xác.
-Kiểm tra hiệu suất khi dữ liệu lớn.
-Triển khai vào hệ thống thực tế.
+ -Tạo dữ liệu mẫu để kiểm tra truy vấn (INSERT dữ liệu giả lập).
+ -Chạy các truy vấn thử nghiệm để đảm bảo dữ liệu chính xác.
+ -Kiểm tra hiệu suất khi dữ liệu lớn.
+ -Triển khai vào hệ thống thực tế.
 
 Quy trình đặt phòng:
-1. Bắt đầu quy trình
+ 1. Bắt đầu quy trình
 Khách hàng đến quầy lễ tân của khách sạn hoặc mở cổng thông tin trực tuyến.
-2. Tìm phòng theo ngày và loại phòng mong muốn
-Hệ thống tìm kiếm phòng trống dựa trên ngày khách hàng mong muốn và loại phòng yêu cầu.
-3. Kiểm tra phòng có sẵn hay không?
-Nếu có phòng trống → Tiếp tục đến bước kiểm tra khách hàng.
+ 2. Tìm phòng theo ngày và loại phòng mong muốn
+ Hệ thống tìm kiếm phòng trống dựa trên ngày khách hàng mong muốn và loại phòng yêu cầu.
+ 3. Kiểm tra phòng có sẵn hay không?
+ 4.  Nếu có phòng trống → Tiếp tục đến bước kiểm tra khách hàng.
 
-Nếu không có phòng trống → Thông báo cho khách hàng về việc không còn phòng trống.
+ Nếu không có phòng trống → Thông báo cho khách hàng về việc không còn phòng trống.
 
-➝ Khi không có phòng, khách hàng có thể chọn tìm kiếm lại không.
+ ➝ Khi không có phòng, khách hàng có thể chọn tìm kiếm lại không.
 
-Nếu có (Yes) → Quay lại bước tìm phòng.
-Nếu không (No) → Quy trình kết thúc.
+ Nếu có (Yes) → Quay lại bước tìm phòng.
+ Nếu không (No) → Quy trình kết thúc.
 4. Xác định khách hàng là khách cũ hay khách mới
-Nếu khách hàng đã từng đặt phòng trước đây → Tìm thông tin khách hàng trong hệ thống.
-Nếu khách hàng mới lần đầu đặt phòng → Đăng ký thông tin khách hàng mới.               
+ Nếu khách hàng đã từng đặt phòng trước đây → Tìm thông tin khách hàng trong hệ thống.
+ Nếu khách hàng mới lần đầu đặt phòng → Đăng ký thông tin khách hàng mới.               
 5. Hỏi phương thức thanh toán
-Khách hàng có thể chọn thanh toán bằng thẻ tín dụng hoặc thanh toán bằng tiền mặt(đặt cọc học trả thẳng).
+ Khách hàng có thể chọn thanh toán bằng thẻ tín dụng hoặc thanh toán bằng tiền mặt(đặt cọc học trả thẳng).
 6. Đặt phòng
 Sau khi có thông tin khách hàng, tiến hành đặt phòng cho khách.
 7. Kết thúc quy trình
@@ -108,23 +108,23 @@ Quy trình đặt phòng hoàn tất.
 Quy trình nhận phòng (check in):
 1. Khách hàng đến quầy lễ tân của khách sạn.
 2.Lễ tân tiếp đón khách hàng: Lễ tân chào đón khách hàng và hỏi thông tin đặt phòng.
-→Tìm kiếm thông tin đặt phòng của khách hàng
+ →Tìm kiếm thông tin đặt phòng của khách hàng
 Nếu khách đã đặt phòng:
-→Lễ tân kiểm tra thông tin đặt phòng, bao gồm tên khách hàng, loại phòng, thời gian đặt phòng, v.v.
-→Lễ tân xác nhận thông tin với khách hàng.
-→Lễ tân kiểm tra tình trạng phòng.
+ →Lễ tân kiểm tra thông tin đặt phòng, bao gồm tên khách hàng, loại phòng, thời gian đặt phòng, v.v.
+ →Lễ tân xác nhận thông tin với khách hàng.
+ →Lễ tân kiểm tra tình trạng phòng.
 Nếu khách chưa đặt phòng:
-→Lễ tân hỏi khách hàng về yêu cầu đặt phòng.
-→Nếu khách hàng muốn đặt phòng, lễ tân kiểm tra tình trạng phòng trống và thực hiện đặt phòng cho khách hàng.
-→Nếu khách hàng không muốn đặt phòng, quy trình kết thúc.
+ →Lễ tân hỏi khách hàng về yêu cầu đặt phòng.
+ →Nếu khách hàng muốn đặt phòng, lễ tân kiểm tra tình trạng phòng trống và thực hiện đặt phòng cho khách hàng.
+ →Nếu khách hàng không muốn đặt phòng, quy trình kết thúc.
 3.Kiểm tra tình trạng phòng: Lễ tân kiểm tra tình trạng phòng đã được dọn dẹp và sẵn sàng cho khách nhận phòng hay chưa.
 Phòng sẵn sàng:
-→Lễ tân tiến hành thủ tục nhận phòng cho khách.
+ →Lễ tân tiến hành thủ tục nhận phòng cho khách.
 Phòng chưa sẵn sàng:
-→Lễ tân thông báo cho khách hàng và xin lỗi vì sự bất tiện.
-→Lễ tân yêu cầu khách hàng chờ đợi trong thời gian ngắn.
-→Lễ tân thông báo cho bộ phận buồng phòng để nhanh chóng dọn dẹp phòng.
-→Sau khi phòng sẵn sàng, lễ tân tiến hành thủ tục nhận phòng cho khách.
+ →Lễ tân thông báo cho khách hàng và xin lỗi vì sự bất tiện.
+ →Lễ tân yêu cầu khách hàng chờ đợi trong thời gian ngắn.
+ →Lễ tân thông báo cho bộ phận buồng phòng để nhanh chóng dọn dẹp phòng.
+ →Sau khi phòng sẵn sàng, lễ tân tiến hành thủ tục nhận phòng cho khách.
 4.Cung cấp chìa khóa và thẻ phòng cho khách hàng
 	→Yêu cầu nhân viên dẫn khách lên phòng
 5.Cập nhật trạng thái phòng: Lễ tân cập nhật trạng thái phòng trong hệ thống quản lý khách sạn sang "Đã nhận phòng".
@@ -136,11 +136,11 @@ Quy trình hủy đặt phòng:
   	3.Kiểm tra thông tin đặt phòng
 4.Kiểm tra thời gian hủy phòng
 Nếu khách hàng hủy phòng trước thời hạn quy định:
-→Lễ tân thông báo cho khách hàng về việc hủy phòng thành công.
-→Tiếp tục đến bước "Hoàn tiền".
+ →Lễ tân thông báo cho khách hàng về việc hủy phòng thành công.
+ →Tiếp tục đến bước "Hoàn tiền".
 Nếu khách hàng hủy phòng sau thời hạn quy định:
-→Lễ tân thông báo cho khách hàng vi phạm điều khoản của khách sạn và bị giữ lại 50% tiền cọc.
+ →Lễ tân thông báo cho khách hàng vi phạm điều khoản của khách sạn và bị giữ lại 50% tiền cọc.
 5.Hoàn tiền
-→Lễ tân xử lý việc hoàn tiền cho khách 
-→Lễ tân thông báo kết quả hủy phòng cho khách hàng qua giấy hoặc gửi qua email.
+ →Lễ tân xử lý việc hoàn tiền cho khách 
+ →Lễ tân thông báo kết quả hủy phòng cho khách hàng qua giấy hoặc gửi qua email.
 
