@@ -13,12 +13,12 @@ Hệ thống còn hỗ trợ chức năng báo cáo để nhân viên có thể 
 
 ### Yêu cầu hệ thống:
 1. Hệ thống phải hỗ trợ việc đặt phòng nhiều loại phòng khác nhau như phòng tiêu chuẩn, phòng sang trọng, phòng gia đình, v.v.
-2. Khách có thể tìm kiếm phòng trống và đặt bất kỳ phòng nào còn trống.
-3. Hệ thống phải có khả năng thu thập thông tin, chẳng hạn như ai đã đặt phòng cụ thể hoặc khách hàng cụ thể đã đặt phòng nào.
-4. Hệ thống phải cho phép khách hàng hủy đặt phòng - và hoàn lại toàn bộ tiền nếu việc hủy diễn ra trước 24 giờ so với ngày nhận phòng.
-5. Hệ thống phải có khả năng gửi thông báo bất cứ khi nào ngày đặt phòng gần đến ngày nhận phòng hoặc ngày trả phòng.
-6. Hệ thống phải duy trì nhật ký dọn phòng để theo dõi mọi công việc dọn phòng.
-7. Bất kỳ khách hàng nào cũng có thể thêm dịch vụ phòng và đồ ăn.
+2. Hệ thống phải có khả năng thu thập thông tin, chẳng hạn như ai đã đặt phòng cụ thể hoặc khách hàng cụ thể đã đặt phòng nào.
+3. Hệ thống phải cho phép khách hàng hủy đặt phòng - và hoàn lại toàn bộ tiền nếu việc hủy diễn ra trước 24 giờ so với ngày đặt phòng.
+4. Hệ thống phải có khả năng gửi thông báo bất cứ khi nào ngày đặt phòng gần đến ngày nhận phòng hoặc ngày trả phòng.
+5. Hệ thống phải duy trì nhật ký dọn phòng để theo dõi mọi công việc dọn phòng.
+6. Bất kỳ khách hàng nào cũng có thể thêm dịch vụ phòng và đồ ăn.
+7. Khách có thể tìm kiếm phòng trống và đặt bất kỳ phòng nào còn trống.
 8. Khách hàng có thể thanh toán hóa đơn bằng thẻ tín dụng, séc hoặc tiền mặt.
 
 ### ĐẶC TẢ YÊU CẦU NGHIỆP VỤ HỆ THỐNG QUẢN LÝ KHÁCH SẠN 
