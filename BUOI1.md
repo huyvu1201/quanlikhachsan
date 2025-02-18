@@ -54,7 +54,10 @@ Hệ thống quản lý khách sạn giúp tự động hóa các quy trình nh�
    - Khách hàng có thể: Đặt thêm dịch vụ (Ăn uống, Spa, Giặt ủi).  
    - Nhân viên có thể: Xác nhận và phục vụ dịch vụ. Cập nhật trạng thái dịch vụ đã hoàn thành.  
 
-6. **Báo cáo & Thống kê**  
+6. **Quản lý thông báo**  
+   - Gửi thông báo về email khi khách hàng đặt phòng thành công và gửi thông báo khi khách hàng hủy phòng thành công.
+     
+7. **Báo cáo & Thống kê**  
    - Admin có thể xem các báo cáo: Doanh thu theo ngày/tháng/năm. Số lượng phòng đã đặt. Hiệu suất nhân viên.
 
 ---
