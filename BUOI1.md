@@ -19,8 +19,7 @@ Hệ thống còn hỗ trợ chức năng báo cáo để nhân viên có thể 
 5. Hệ thống phải có khả năng gửi thông báo bất cứ khi nào ngày đặt phòng gần đến ngày nhận phòng hoặc ngày trả phòng.
 6. Hệ thống phải duy trì nhật ký dọn phòng để theo dõi mọi công việc dọn phòng.
 7. Bất kỳ khách hàng nào cũng có thể thêm dịch vụ phòng và đồ ăn.
-8. Khách hàng có thể yêu cầu những tiện nghi khác nhau.
-9. Khách hàng có thể thanh toán hóa đơn bằng thẻ tín dụng, séc hoặc tiền mặt.
+8. Khách hàng có thể thanh toán hóa đơn bằng thẻ tín dụng, séc hoặc tiền mặt.
 
 ### ĐẶC TẢ YÊU CẦU NGHIỆP VỤ HỆ THỐNG QUẢN LÝ KHÁCH SẠN 
 #### 1. Giới thiệu
