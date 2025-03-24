@@ -3,7 +3,7 @@ import { useRouter } from 'expo-router';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, Image } from 'react-native';
 import axios from 'axios';
 
-const API_URL = "http://10.0.2.2:3002/api/users"; // Cập nhật đúng địa chỉ backend
+const API_URL = "http://10.0.2.2:3001/api/users"; // Địa chỉ API backend
 
 const LoginScreen: React.FC = () => {
   const [taiKhoan, setTaiKhoan] = useState<string>('');
@@ -11,25 +11,35 @@ const LoginScreen: React.FC = () => {
   const router = useRouter();
 
   const handleLogin = async () => {
-    if (!taiKhoan || !matKhau) {
+    console.log("📝 Nhập tài khoản:", taiKhoan);
+    console.log("📝 Nhập mật khẩu:", matKhau);
+
+    if (!taiKhoan.trim() || !matKhau.trim()) {
       Alert.alert('Lỗi', 'Vui lòng nhập đầy đủ tài khoản và mật khẩu!');
       return;
     }
 
+    const requestData = {
+      username: taiKhoan, // Đổi key cho đúng API
+      password: matKhau
+    };
+
+    console.log("📤 Gửi request:", requestData);
+
     try {
-      const response = await axios.post(`${API_URL}/login`, {
-        TaiKhoan: taiKhoan,
-        MatKhau: matKhau
-      });
+      const response = await axios.post(`${API_URL}/login`, requestData);
+      console.log("✅ Phản hồi từ server:", response.data);
 
       if (response.data.success) {
         Alert.alert('Thành công', 'Đăng nhập thành công!');
-        router.push('/(tabs)/hoso'); // Điều hướng đến trang hồ sơ
+        router.push('/(tabs)/trangchu'); // Điều hướng đến trang hồ sơ
       } else {
         Alert.alert('Lỗi', response.data.message || 'Sai thông tin đăng nhập');
       }
     } catch (error: any) {
-      console.error('Lỗi đăng nhập:', error);
+      console.error("❌ Lỗi đăng nhập:", error);
+      console.log("📥 Phản hồi lỗi từ server:", error.response?.data);
+
       Alert.alert('Lỗi', error.response?.data?.message || 'Không thể kết nối đến server.');
     }
   };
@@ -49,7 +59,10 @@ const LoginScreen: React.FC = () => {
           placeholder="Tài khoản"
           placeholderTextColor="#999"
           value={taiKhoan}
-          onChangeText={setTaiKhoan}
+          onChangeText={(text) => {
+            console.log("📝 Nhập tài khoản:", text);
+            setTaiKhoan(text);
+          }}
         />
         <TextInput
           style={styles.input}
@@ -57,10 +70,15 @@ const LoginScreen: React.FC = () => {
           placeholderTextColor="#999"
           secureTextEntry
           value={matKhau}
-          onChangeText={setMatKhau}
+          onChangeText={(text) => {
+            console.log("📝 Nhập mật khẩu:", text);
+            setMatKhau(text);
+          }}
         />
         <TouchableOpacity>
-          <Text style={styles.forgotPassword} onPress={() => router.push('/(tabs)/quenmk')}>Quên Mật Khẩu</Text>
+          <Text style={styles.forgotPassword} onPress={() => router.push('/(tabs)/quenmk')}>
+            Quên Mật Khẩu
+          </Text>
         </TouchableOpacity>
       </View>
 
